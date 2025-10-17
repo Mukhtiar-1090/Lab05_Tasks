@@ -63,3 +63,34 @@ By completing these exercises, I learned to:
 ---
 
 ## 🖥️ **Project Structure**
+
+
+---
+
+## ⚙️ **How to View**
+1. Visit the **live site:**  
+   👉 [https://mukhtiar-1090.github.io/Lab05_Tasks/](https://mukhtiar-1090.github.io/Lab05_Tasks/)
+2. Click on each task file to view its output.
+3. Resize your browser window or switch devices to test responsiveness.
+
+---
+
+## 🏁 **Conclusion**
+This lab demonstrates proficiency in:
+- Responsive and adaptive web design  
+- Combining legacy (floats) and modern (Flexbox, Grid) CSS techniques  
+- Accessibility-aware styling for user preferences  
+- Clean, semantic, and maintainable CSS structure  
+
+Through these tasks, I have gained strong practical knowledge in **front-end layout systems** essential for modern web development.
+
+---
+
+## 👨‍💻 **Developed by**
+**Mukhtiar Ahmad**  
+Department of Computer Science  
+University of Engineering & Technology, Peshawar  
+📅 *October 2025*
+
+---
+
