@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Holy Grail — Flexbox Implementation</title>
+<style>
+:root{
+  --gutter:16px;
+  --accent:#0047AB;
+  --card:#fff;
+  --bg:#f5f7fb;
+  --max-width:1200px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, Roboto, "Segoe UI", Arial;
+  background:var(--bg);
+  color:#222;
+  padding:16px;
+  display:flex;
+  justify-content:center;
+}
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  flex-direction:column;
+  gap:var(--gutter);
+}
+
+/* header/footer */
+.header, .footer{
+  background:var(--accent);
+  color:white;
+  padding:14px;
+  border-radius:8px;
+  text-align:center;
+}
+
+/* content area: mobile-first stacked */
+.content{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gutter);
+}
+
+/* blocks */
+.sidebar-left, .main, .sidebar-right{
+  background:var(--card);
+  padding:12px;
+  border-radius:8px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.06);
+}
+
+/* desktop: transform into 3-column row */
+@media (min-width: 900px){
+  .content{
+    flex-direction:row;
+    align-items:flex-start;
+  }
+  .sidebar-left, .sidebar-right{
+    flex: 0 0 220px; /* fixed width */
+    order:0;
+  }
+  .main{
+    flex: 1 1 auto; /* flexible middle column */
+    order:1;
+  }
+}
+
+/* make sure sidebars can optionally collapse under main on medium screens */
+@media (min-width:700px) and (max-width:899px){
+  .content{
+    flex-direction:row;
+  }
+  .sidebar-left, .sidebar-right{
+    flex:0 0 180px;
+  }
+  .main{flex:1 1 auto}
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">Holy Grail — Flexbox (Mobile-First)</header>
+
+    <div class="content">
+      <aside class="sidebar-left">
+        <h3>Left Sidebar</h3>
+        <p>Navigation / links</p>
+      </aside>
+
+      <main class="main">
+        <h2>Main content</h2>
+        <p>Flexbox makes it easy to create an adaptable center column that grows while sidebars keep their widths. This is a modern recommended approach for many layouts.</p>
+        <p>Because this is mobile-first, the CSS starts stacked and progressively enhances layout as viewport grows.</p>
+      </main>
+
+      <aside class="sidebar-right">
+        <h3>Right Sidebar</h3>
+        <p>Related info / widgets</p>
+      </aside>
+    </div>
+
+    <footer class="footer">Footer area</footer>
+  </div>
+</body>
+</html>

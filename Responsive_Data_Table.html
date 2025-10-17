@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 14 - Responsive Data Table</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6fa;
+      padding: 30px;
+      margin: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* === Table Styles === */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: #1e3d59;
+      color: #fff;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+      background: #f9fafc;
+    }
+
+    th {
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* === Tablet: Convert to Card Style === */
+    @media (max-width: 992px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        background: #fff;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        padding: 10px;
+      }
+
+      td {
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #1e3d59;
+      }
+    }
+
+    /* === Mobile: Single Column Stack === */
+    @media (max-width: 600px) {
+      td {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      td::before {
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Responsive Data Table</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Roll No</th>
+        <th>Department</th>
+        <th>GPA</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Student Name">Mukhtiar Ahmad</td>
+        <td data-label="Roll No">UET-101</td>
+        <td data-label="Department">Computer Science</td>
+        <td data-label="GPA">3.8</td>
+        <td data-label="Status">Active</td>
+      </tr>
+      <tr>
+        <td data-label="Student Name">Ahsan Khan</td>
+        <td data-label="Roll No">UET-102</td>
+        <td data-label="Department">Software Engineering</td>
+        <td data-label="GPA">3.5</td>
+        <td data-label="Status">Active</td>
+      </tr>
+      <tr>
+        <td data-label="Student Name">Hina Bibi</td>
+        <td data-label="Roll No">UET-103</td>
+        <td data-label="Department">Information Technology</td>
+        <td data-label="GPA">3.9</td>
+        <td data-label="Status">Graduated</td>
+      </tr>
+      <tr>
+        <td data-label="Student Name">Bilal Ahmed</td>
+        <td data-label="Roll No">UET-104</td>
+        <td data-label="Department">Computer Systems</td>
+        <td data-label="GPA">3.6</td>
+        <td data-label="Status">Active</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

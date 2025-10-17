@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 1: Display Property Showcase</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+/* Block, Inline, Inline-Block Demo */
+.block { display: block; background: lightcoral; margin: 5px 0; padding: 10px; }
+.inline { display: inline; background: lightgreen; padding: 5px; }
+.inline-block { display: inline-block; background: lightblue; padding: 10px; margin: 5px; }
+
+/* Table Display */
+.table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+.row { display: table-row; }
+.cell {
+  display: table-cell;
+  border: 1px solid #333;
+  padding: 8px;
+}
+
+/* Hidden Elements */
+.hidden { display: none; }
+
+/* Responsive Display Changes */
+@media (max-width: 600px) {
+  .inline-block { display: block; background: orange; }
+  .table { display: block; }
+  .hidden { display: block; background: gray; color: white; text-align: center; }
+}
+</style>
+</head>
+<body>
+<h1>Display Property Showcase</h1>
+
+<h2>Block, Inline, Inline-Block</h2>
+<div class="block">Block Element</div>
+<span class="inline">Inline Element 1</span>
+<span class="inline">Inline Element 2</span>
+<div class="inline-block">Inline-Block 1</div>
+<div class="inline-block">Inline-Block 2</div>
+
+<h2>Table Display without Table Tag</h2>
+<div class="table">
+  <div class="row">
+    <div class="cell">Name</div>
+    <div class="cell">Department</div>
+    <div class="cell">Year</div>
+  </div>
+  <div class="row">
+    <div class="cell">Mukhtiar Ahmad</div>
+    <div class="cell">Computer Science</div>
+    <div class="cell">2025</div>
+  </div>
+</div>
+
+<h2>Hidden Element</h2>
+<p class="hidden">This paragraph is hidden on desktop but visible on mobile!</p>
+</body>
+</html>

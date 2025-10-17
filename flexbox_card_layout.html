@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 5: Flexbox Card Layout</title>
+<style>
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container holding cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Each Card */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 300px; /* Flexible width */
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  min-height: 400px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-content {
+  flex: 1; /* fills remaining space to make equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* Card Header + Text */
+.card-content h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.card-content p {
+  flex-grow: 1;
+  color: #555;
+}
+
+/* Card Action aligned bottom */
+.card-actions {
+  text-align: center;
+  margin-top: auto;
+}
+
+.card-actions button {
+  background: #0047AB; /* UET blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-actions button:hover {
+  background: #00347d;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .card-container {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center; color:#0047AB;">Task 5: Flexbox Card Layout</h1>
+
+<div class="card-container">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Course Image">
+    <div class="card-content">
+      <h3>Web Development</h3>
+      <p>Learn HTML, CSS, and JavaScript from basics to advanced responsive design.</p>
+      <div class="card-actions">
+        <button>Enroll Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Course Image">
+    <div class="card-content">
+      <h3>Data Science</h3>
+      <p>Understand Python, data visualization, and machine learning models effectively.</p>
+      <div class="card-actions">
+        <button>Enroll Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200" alt="Course Image">
+    <div class="card-content">
+      <h3>Networking</h3>
+      <p>Master computer networks, routing, and security concepts for real-world applications.</p>
+      <div class="card-actions">
+        <button>Enroll Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

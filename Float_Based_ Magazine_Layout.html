@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 2: Float-Based Magazine Layout</title>
+<style>
+body {
+  font-family: Georgia, serif;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+
+.container {
+  overflow: auto;
+}
+
+.sidebar {
+  float: left;
+  width: 25%;
+  background: #f2f2f2;
+  padding: 15px;
+}
+
+.content {
+  float: left;
+  width: 70%;
+  margin-left: 5%;
+}
+
+img {
+  float: right;
+  width: 200px;
+  margin: 10px;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 700px) {
+  .sidebar, .content, img {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Float-Based Magazine Layout</h1>
+</header>
+
+<div class="container">
+  <div class="sidebar">
+    <h3>Sidebar</h3>
+    <p>Quick links, ads, or related stories go here.</p>
+  </div>
+
+  <div class="content">
+    <h2>Main Article</h2>
+    <img src="float.jpeg" alt="Article Image">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac tellus ac orci placerat tincidunt. Donec sit amet lorem non sapien sagittis volutpat. Proin feugiat purus ut libero euismod tincidunt.</p>
+    <p>Vivamus facilisis, erat a laoreet ullamcorper, justo tortor sagittis odio, eget consequat tortor odio nec ipsum.</p>
+  </div>
+</div>
+</body>
+</html>

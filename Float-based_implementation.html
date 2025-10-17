@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Holy Grail — Float Implementation</title>
+<style>
+:root{
+  --gutter:16px;
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --accent:#0047AB;
+  --muted:#666;
+  --max-width:1100px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#222;
+  padding:16px;
+  display:flex;
+  justify-content:center;
+}
+.site{
+  width:100%;
+  max-width:var(--max-width);
+  background:transparent;
+}
+
+/* basic visual blocks */
+.header, .footer {
+  background:var(--accent);
+  color:white;
+  padding:14px;
+  border-radius:6px;
+  text-align:center;
+  margin-bottom:var(--gutter);
+}
+.row { overflow:auto; } /* contains floats */
+
+/* mobile-first: stacked layout */
+.sidebar-left, .main, .sidebar-right {
+  background:var(--card);
+  padding:12px;
+  margin-bottom:var(--gutter);
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* order on mobile: left sidebar, main, right sidebar (you may want main first — adjust if needed) */
+.sidebar-left { order:0; }
+.main { order:1; }
+.sidebar-right { order:2; }
+
+/* clearfix helper */
+.cf::after { content:""; display:table; clear:both; }
+
+/* floats on wider screens create the holy grail */
+@media (min-width: 840px){
+  .row { /* will contain floats */
+    display:block;
+  }
+  .sidebar-left {
+    float:left;
+    width:20%;
+    margin-right:2%;
+    margin-bottom:0;
+  }
+  .sidebar-right {
+    float:right;
+    width:20%;
+    margin-left:2%;
+    margin-bottom:0;
+  }
+  .main {
+    float:left;
+    width:56%; /* 100 - 20 - 20 - 2 - 2 = 56 */
+    margin-bottom:0;
+  }
+}
+
+/* sample typography for main */
+.main h2{margin-top:0}
+.nav-list{list-style:none;padding:0;margin:0}
+.nav-list li{margin:8px 0;color:var(--muted)}
+.footer{margin-top:var(--gutter)}
+</style>
+</head>
+<body>
+  <div class="site">
+    <header class="header">Holy Grail — Float Implementation</header>
+
+    <div class="row cf">
+      <aside class="sidebar-left">
+        <h3>Left Sidebar</h3>
+        <ul class="nav-list">
+          <li>Link A</li>
+          <li>Link B</li>
+          <li>Link C</li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <h2>Main Content</h2>
+        <p>This is the main content area. On mobile the layout stacks; on wide screens this becomes the center column while left and right sidebars float beside it.</p>
+        <p>Use floats + clearfix to solve the collapse problem. This is an older technique but still useful to understand.</p>
+      </main>
+
+      <aside class="sidebar-right">
+        <h3>Right Sidebar</h3>
+        <p>Secondary content or ads.</p>
+      </aside>
+    </div>
+
+    <footer class="footer">Footer — site information</footer>
+  </div>
+</body>
+</html>

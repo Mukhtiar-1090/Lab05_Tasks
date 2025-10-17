@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task 11 — Responsive CSS Grid Magazine Layout</title>
+<style>
+:root {
+  --accent: #0047ab;
+  --bg: #f8f9fb;
+  --text: #222;
+  --muted: #666;
+  --card: #fff;
+  --radius: 10px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* RESET + BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", Roboto, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  background: var(--accent);
+  color: #fff;
+  padding: 40px 20px;
+}
+header h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 10px;
+}
+header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #e3e3e3;
+}
+
+/* MAIN GRID */
+.main {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ARTICLE CARD */
+.article {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+.article:hover {
+  transform: translateY(-4px);
+}
+.article img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.article-content {
+  padding: 16px;
+}
+.article h2 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.article p {
+  color: var(--muted);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+/* ========== GRID LAYOUTS ========== */
+
+/* Desktop: asymmetric layout */
+@media (min-width: 1000px) {
+  .main {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+      "featured side1 side2"
+      "featured side3 side4";
+  }
+
+  .article:nth-child(1) { grid-area: featured; }
+  .article:nth-child(2) { grid-area: side1; }
+  .article:nth-child(3) { grid-area: side2; }
+  .article:nth-child(4) { grid-area: side3; }
+  .article:nth-child(5) { grid-area: side4; }
+
+  .article:nth-child(1) img {
+    height: 100%;
+    max-height: 100%;
+  }
+}
+
+/* Tablet: symmetric 2-column grid */
+@media (min-width: 600px) and (max-width: 999px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 599px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Digital Magazine</h1>
+    <p>Modern Web Layouts with CSS Grid</p>
+  </header>
+
+  <main class="main">
+    <article class="article">
+      <img src="https://picsum.photos/800/600?random=1" alt="Featured article">
+      <div class="article-content">
+        <h2>Feature: The Future of Web Design</h2>
+        <p>Explore how responsive layouts, fluid typography, and accessibility drive modern web experiences across all devices.</p>
+      </div>
+    </article>
+
+    <article class="article">
+      <img src="https://picsum.photos/800/600?random=2" alt="Article 2">
+      <div class="article-content">
+        <h2>Top 10 CSS Tricks in 2025</h2>
+        <p>Discover the most useful CSS properties and layout techniques that every front-end developer should master.</p>
+      </div>
+    </article>
+
+    <article class="article">
+      <img src="https://picsum.photos/800/600?random=3" alt="Article 3">
+      <div class="article-content">
+        <h2>Flexbox vs Grid: When to Use Which</h2>
+        <p>Learn the strengths of both Flexbox and CSS Grid, and how to combine them effectively for professional designs.</p>
+      </div>
+    </article>
+
+    <article class="article">
+      <img src="https://picsum.photos/800/600?random=4" alt="Article 4">
+      <div class="article-content">
+        <h2>Responsive Typography Simplified</h2>
+        <p>Scale text smoothly using the <code>clamp()</code> function for truly responsive font sizes on every device.</p>
+      </div>
+    </article>
+
+    <article class="article">
+      <img src="https://picsum.photos/800/600?random=5" alt="Article 5">
+      <div class="article-content">
+        <h2>Design Systems and Components</h2>
+        <p>How design systems streamline collaboration and improve UI consistency across large projects.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    © 2025 Digital Magazine — Built with CSS Grid & Flexbox
+  </footer>
+
+</body>
+</html>

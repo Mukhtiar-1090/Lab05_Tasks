@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 16 - Media Query Breakpoints Practice</title>
+  <style>
+    /* ========== Base Styles (Mobile First: 0px–767px) ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      color: #333;
+      text-align: center;
+      padding: 30px;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #1e3d59;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .box {
+      background-color: #1e3d59;
+      color: white;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 300px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      transition: all 0.4s ease;
+    }
+
+    /* ========== Tablet (768px and up) ========== */
+    @media (min-width: 768px) {
+      body {
+        background-color: #dff3e3;
+      }
+
+      .box {
+        background-color: #197278;
+        max-width: 600px;
+        font-size: 1.4rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* ========== Small Desktop (1024px and up) ========== */
+    @media (min-width: 1024px) {
+      body {
+        background-color: #fcefee;
+        color: #333;
+      }
+
+      .box {
+        background-color: #c44536;
+        max-width: 700px;
+        font-size: 1.6rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* ========== Large Desktop (1200px and up) ========== */
+    @media (min-width: 1200px) {
+      body {
+        background-color: #f4f1de;
+      }
+
+      .box {
+        background-color: #3d405b;
+        max-width: 900px;
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+    }
+
+    /* ========== Extra Large Screens (1400px and up) ========== */
+    @media (min-width: 1400px) {
+      body {
+        background-color: #81b29a;
+      }
+
+      .box {
+        background-color: #264653;
+        max-width: 1000px;
+        font-size: 2rem;
+      }
+
+      h1 {
+        font-size: 2.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Responsive Media Query Practice</h1>
+  <p>Resize the browser to see background & box styles change at each breakpoint.</p>
+
+  <div class="box">
+    Screen width: Adjust the browser size 👆
+  </div>
+</body>
+</html>

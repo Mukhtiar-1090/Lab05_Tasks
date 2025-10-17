@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 18 - Dark Mode & Preference Media Queries</title>
+  <style>
+    /* ========== Base Styles (Default Light Mode) ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.4s ease;
+    }
+
+    body {
+      background-color: #f5f6fa;
+      color: #2b2d42;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .btn {
+      background: #2b2d42;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* ========== DARK MODE (prefers-color-scheme) ========== */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #f1f1f1;
+      }
+
+      .card {
+        background-color: #1e1e1e;
+        color: #f1f1f1;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      }
+
+      .btn {
+        background-color: #f1f1f1;
+        color: #121212;
+      }
+    }
+
+    /* ========== REDUCED MOTION (prefers-reduced-motion) ========== */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .card {
+        box-shadow: none;
+      }
+    }
+
+    /* ========== HIGH CONTRAST (prefers-contrast: more) ========== */
+    @media (prefers-contrast: more) {
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .card {
+        background-color: #fff;
+        color: #000;
+        border: 3px solid #000;
+        box-shadow: none;
+      }
+
+      .btn {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
+      }
+    }
+
+    /* ========== PRINT MEDIA ========== */
+    @media print {
+      body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+      }
+
+      .btn {
+        display: none;
+      }
+
+      .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+
+      h1 {
+        font-size: 18pt;
+      }
+
+      p {
+        font-size: 11pt;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Task 18 – Dark Mode & Preference Media Queries</h1>
+  <p>Try switching your OS theme to Dark Mode, enable reduced motion or high contrast settings, and print preview this page!</p>
+
+  <div class="card">
+    <h2>Responsive Accessibility Demo</h2>
+    <p>This card adapts to user preferences automatically.</p>
+    <button class="btn">Try Me</button>
+  </div>
+</body>
+</html>

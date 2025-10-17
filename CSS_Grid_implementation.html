@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Holy Grail — Grid Implementation</title>
+<style>
+:root{
+  --g:16px;
+  --accent:#0047AB;
+  --card:#ffffff;
+  --bg:#f4f6fb;
+  --max:1200px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, "Segoe UI", Roboto, Arial;
+  background:var(--bg);
+  padding:var(--g);
+  display:flex;
+  justify-content:center;
+}
+.wrapper{
+  max-width:var(--max);
+  width:100%;
+}
+
+/* grid container */
+.grid {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "left"
+    "right"
+    "footer";
+  gap:var(--g);
+}
+
+/* visual pieces */
+.header, .main, .left, .right, .footer {
+  background:var(--card);
+  padding:12px;
+  border-radius:8px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.06);
+}
+
+.header { grid-area: header; background:var(--accent); color:white; text-align:center; }
+.main   { grid-area: main; }
+.left   { grid-area: left; }
+.right  { grid-area: right; }
+.footer { grid-area: footer; text-align:center }
+
+/* Desktop layout: classic holy grail with left | main | right */
+@media (min-width:900px){
+  .grid{
+    grid-template-columns: 220px 1fr 220px;
+    grid-template-areas:
+      "header header header"
+      "left main right"
+      "footer footer footer";
+    align-items:start;
+  }
+}
+
+/* Medium screens: maybe left collapses under header, right moves below main */
+@media (min-width:700px) and (max-width:899px){
+  .grid{
+    grid-template-columns: 180px 1fr;
+    grid-template-areas:
+      "header header"
+      "left  main"
+      "footer footer"
+      "right  right";
+  }
+}
+
+/* small screens: stack — already default mobile-first */
+
+/* simple visual tweaks */
+.left h3, .right h3 { margin-top:0 }
+.main h2{ margin-top:0 }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="grid">
+      <header class="header">Holy Grail — CSS Grid</header>
+
+      <main class="main">
+        <h2>Main Content Area</h2>
+        <p>Grid gives you explicit control: named areas let you rearrange layout for any breakpoint without changing HTML structure.</p>
+      </main>
+
+      <aside class="left">
+        <h3>Left Sidebar</h3>
+        <p>Navigation or menu</p>
+      </aside>
+
+      <aside class="right">
+        <h3>Right Sidebar</h3>
+        <p>Extras / widgets</p>
+      </aside>
+
+      <footer class="footer">Footer content</footer>
+    </div>
+  </div>
+</body>
+</html>

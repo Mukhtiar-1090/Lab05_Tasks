@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 15 - Mobile First Landing Page</title>
+  <style>
+    /* ========== Base (Mobile First) ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #fefefe;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #1e3d59;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #1e3d59;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #ff6e40;
+      color: white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f9fafc;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .hero h2 {
+      margin: 20px 0 10px;
+      font-size: 1.5rem;
+      color: #1e3d59;
+    }
+
+    .hero p {
+      color: #555;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .cta-btn {
+      background: #1e3d59;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #ff6e40;
+    }
+
+    section.features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .feature {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature img {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto 10px;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      background: #1e3d59;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    /* ========== Tablet Enhancement ========== */
+    @media (min-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        max-width: 500px;
+        margin: 0 auto 20px;
+      }
+
+      .features {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .feature {
+        flex: 1 1 calc(50% - 40px);
+        max-width: 400px;
+      }
+    }
+
+    /* ========== Desktop Enhancement ========== */
+    @media (min-width: 992px) {
+      nav a {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        gap: 40px;
+        padding: 60px;
+      }
+
+      .hero img {
+        max-width: 450px;
+      }
+
+      .hero-content {
+        max-width: 500px;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .features {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .feature {
+        flex: 1 1 calc(33.33% - 40px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mukhtiar's Portfolio</h1>
+    <p>Building modern, responsive web experiences</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <img src="A1.JPG" alt="Hero Image" loading="lazy">
+    <div class="hero-content">
+      <h2>Crafting Websites That Work Everywhere</h2>
+      <p>From mobile to desktop, experience smooth and elegant designs tailored for every screen.</p>
+      <button class="cta-btn">View My Work</button>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <img src="B2.jpg" alt="Feature 1" loading="lazy">
+      <h3>Responsive Design</h3>
+      <p>Layouts that adapt to any device and screen size seamlessly.</p>
+    </div>
+    <div class="feature">
+      <img src="E5.jpg" alt="Feature 2" loading="lazy">
+      <h3>Fast Performance</h3>
+      <p>Optimized images and lightweight CSS for faster mobile loading.</p>
+    </div>
+    <div class="feature">
+      <img src="F6.jpg" alt="Feature 3" loading="lazy">
+      <h3>Modern Techniques</h3>
+      <p>Built using Flexbox, Grid, and mobile-first responsive design principles.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Mukhtiar Ahmad | Designed with ❤️ in UET Peshawar
+  </footer>
+
+</body>
+</html>

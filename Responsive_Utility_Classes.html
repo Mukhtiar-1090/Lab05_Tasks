@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 17 - Responsive Utility Classes</title>
+  <style>
+    /* ========== Base Styles ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f6fa;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #2b2d42;
+    }
+
+    .box {
+      background: #8d99ae;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    /* ========== Responsive Visibility Utilities ========== */
+    .hidden-mobile { display: none; }
+    @media (min-width: 768px) {
+      .hidden-tablet { display: none; }
+      .hidden-mobile { display: block; }
+    }
+    @media (min-width: 1024px) {
+      .hidden-desktop { display: none; }
+    }
+
+    /* ========== Responsive Spacing Utilities ========== */
+    .p-1 { padding: 10px; }
+    .p-2 { padding: 20px; }
+    .m-1 { margin: 10px; }
+    .m-2 { margin: 20px; }
+
+    /* Responsive padding changes */
+    @media (min-width: 768px) {
+      .p-md-3 { padding: 30px; }
+    }
+
+    /* ========== Text Alignment Utilities ========== */
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+
+    @media (min-width: 768px) {
+      .text-md-left { text-align: left; }
+      .text-md-right { text-align: right; }
+    }
+
+    @media (min-width: 1024px) {
+      .text-lg-center { text-align: center; }
+    }
+
+    /* ========== Flexbox Utility Classes ========== */
+    .flex { display: flex; flex-wrap: wrap; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .align-center { align-items: center; }
+
+    /* Responsive flex direction */
+    .flex-col { flex-direction: column; }
+    @media (min-width: 768px) {
+      .flex-md-row { flex-direction: row; }
+    }
+
+    /* Styling for flex child boxes */
+    .flex .box {
+      flex: 1;
+      margin: 10px;
+    }
+
+    /* Color differentiation for demo */
+    .box1 { background: #ef233c; }
+    .box2 { background: #2a9d8f; }
+    .box3 { background: #264653; }
+  </style>
+</head>
+<body>
+  <h1>Responsive Utility Classes Demo</h1>
+
+  <!-- Visibility Demo -->
+  <div class="box box1 hidden-mobile">Visible on Tablet & Desktop</div>
+  <div class="box box2 hidden-tablet">Visible on Mobile Only</div>
+  <div class="box box3 hidden-desktop">Hidden on Desktop</div>
+
+  <!-- Spacing + Text Alignment Demo -->
+  <div class="box p-2 p-md-3 text-center text-md-left text-lg-center">
+    Resize the window to see spacing and alignment change!
+  </div>
+
+  <!-- Flexbox Utility Demo -->
+  <div class="flex flex-col flex-md-row justify-between align-center">
+    <div class="box box1">Box 1</div>
+    <div class="box box2">Box 2</div>
+    <div class="box box3">Box 3</div>
+  </div>
+</body>
+</html>
